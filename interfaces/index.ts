@@ -1,0 +1,4 @@
+enum TextGenerteType {
+  "success",
+  "error",
+}
