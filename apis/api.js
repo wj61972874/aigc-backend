@@ -73,12 +73,20 @@ router.get("/aigc/wechatJsapi/ticket/get", async (ctx) => {
   const signature = getSignature(jsapi_ticket, noncestr, timestamp, decodedUrl);
 
   // 返回签名等数据
-  ctx.body = {
-    appId:WEXIN_MINIPROGREM_CONFIG.APP_ID,
-    signature,
-    noncestr,
-    timestamp,
-    jsapi_ticket,
+  ctx.body =jsapi_ticket ? {
+    code: 200,
+    message: "success",
+    result: {
+      appId:WEXIN_MINIPROGREM_CONFIG.APP_ID,
+      signature,
+      noncestr,
+      timestamp,
+      jsapi_ticket,
+    },
+  }:{
+    code: 500,
+    message: "发生错误啦~",
+    result: null,
   };
 });
 
