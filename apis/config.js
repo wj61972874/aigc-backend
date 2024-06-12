@@ -19,4 +19,9 @@ const config = {
   },
 };
 
-module.exports = { MODAL_TYPE_ENUM, config };
+const WEXIN_MINIPROGREM_CONFIG = {
+  APP_ID: "wxd3320e4985226233",
+  APP_SECRET: "9b1b597a1c4041c94100ef1319d0d640",
+};
+
+module.exports = { MODAL_TYPE_ENUM, config, WEXIN_MINIPROGREM_CONFIG };
